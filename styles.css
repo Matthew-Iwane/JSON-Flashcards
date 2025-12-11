@@ -1,0 +1,251 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f5f5f5;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  /* Import Section */
+  .import-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  }
+  
+  .import-section h2 {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 120px;
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    resize: vertical;
+    transition: border-color 0.2s;
+  }
+  
+  textarea:focus {
+    outline: none;
+    border-color: #4a90d9;
+  }
+  
+  .btn-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  /* Buttons */
+  button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .btn-primary {
+    background: #4a90d9;
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background: #3a7bc8;
+  }
+  
+  .btn-secondary {
+    background: #e0e0e0;
+    color: #333;
+  }
+  
+  .btn-secondary:hover {
+    background: #d0d0d0;
+  }
+  
+  .btn-danger {
+    background: #e57373;
+    color: white;
+  }
+  
+  .btn-danger:hover {
+    background: #d32f2f;
+  }
+  
+  /* Messages */
+  .error {
+    color: #d32f2f;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+  
+  .success {
+    color: #388e3c;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* Example format */
+  .example {
+    display: none;
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: #666;
+    white-space: pre-wrap;
+  }
+  
+  .example.visible {
+    display: block;
+  }
+  
+  /* Flashcard Section */
+  .flashcard-section {
+    display: none;
+  }
+  
+  .flashcard-section.active {
+    display: block;
+  }
+  
+  .progress {
+    text-align: center;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  /* Card */
+  .card-container {
+    perspective: 1000px;
+    height: 300px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    cursor: pointer;
+  }
+  
+  .card.flipped {
+    transform: rotateY(180deg);
+  }
+  
+  .card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 1.4;
+  }
+  
+  .card-front {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+  }
+  
+  .card-back {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    transform: rotateY(180deg);
+  }
+  
+  .card-label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 0.75rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Navigation */
+  .nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .nav-btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .hint {
+    text-align: center;
+    color: #999;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+  }
+  
+  /* Empty state */
+  .empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: #999;
+  }
+  
+  /* Responsive */
+  @media (max-width: 480px) {
+    body {
+      padding: 1rem;
+    }
+  
+    .card-face {
+      font-size: 1.2rem;
+      padding: 1.5rem;
+    }
+  
+    .card-container {
+      height: 250px;
+    }
+  
+    .btn-row {
+      flex-wrap: wrap;
+    }
+  
+    .nav-btn {
+      padding: 0.6rem 1rem;
+      font-size: 0.9rem;
+    }
+  }
